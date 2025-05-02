@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BolBol Nexus</title>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Background Elements -->
+    <canvas id="starfield"></canvas>
+    <div class="particles" id="particles"></div>
+
+    <!-- Theme Toggle UI -->
+    <div class="theme-toggle-wrapper">
+      <button class="theme-toggle-btn" aria-label="Change Theme">
+        <span class="moon-icon">🌙</span>
+        <span class="sun-icon" style="display: none">☀️</span>
+      </button>
+      <div class="theme-dropdown">
+        <div class="theme-option" data-theme="dark">🎬 Dark Mode</div>
+        <div class="theme-option" data-theme="neon">✨ Neon Glow</div>
+        <div class="theme-option" data-theme="cinema">🎞️ Cinema Black</div>
+        <div class="theme-option" data-theme="vibrant">🔥 Vibrant</div>
+        <div class="theme-option" data-theme="retro">📺 Retro CRT</div>
+        <div class="theme-option" data-theme="pastel">🌸 Pastel</div>
+      </div>
+    </div>
+
+    <!-- Theme Reveal Animation -->
+    <div class="theme-reveal"></div>
+    <div class="theme-reveal-blur"></div>
+
+    <!-- Hidden Audio -->
+    <audio
+      id="theme-sound"
+      src="sounds/theme-toggle.mp3"
+      preload="auto"
+    ></audio>
+
+    <!-- Navigation -->
+    <nav>
+      <div class="logo">BolBol</div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main">
+      <div class="card-container">
+        <div class="card">
+          <!-- Form Switch -->
+          <div class="form-switch">
+            <button class="form-toggle active" data-form="login">
+              Sign In
+            </button>
+            <button class="form-toggle" data-form="register">Register</button>
+          </div>
+
+          <!-- Login Form -->
+          <form id="loginForm" class="auth-form active">
+            <h1>Welcome</h1>
+            <div class="form-group">
+              <input type="text" id="loginUsername" placeholder=" " required />
+              <label for="loginUsername">Username</label>
+              <div class="error-message">Invalid username</div>
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                id="loginPassword"
+                placeholder=" "
+                required
+              />
+              <label for="loginPassword">Password</label>
+              <div class="error-message">Invalid password</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign In</button>
+            <div class="social-login">
+              <p>Or continue with</p>
+              <a href="#">Google</a>
+              <a href="#">Facebook</a>
+            </div>
+          </form>
+
+          <!-- Registration Form -->
+          <form id="registerForm" class="auth-form">
+            <h1>Create Account</h1>
+            <div class="form-group">
+              <input type="text" id="regUsername" placeholder=" " required />
+              <label for="regUsername">Username</label>
+              <div class="error-message">Username already exists</div>
+            </div>
+            <div class="form-group">
+              <input type="email" id="regEmail" placeholder=" " required />
+              <label for="regEmail">Email</label>
+              <div class="error-message">Valid email required</div>
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                id="regPassword"
+                placeholder=" "
+                required
+              />
+              <label for="regPassword">Password</label>
+              <div class="error-message">Password must be 6+ characters</div>
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                id="regConfirmPassword"
+                placeholder=" "
+                required
+              />
+              <label for="regConfirmPassword">Confirm Password</label>
+              <div class="error-message">Passwords don't match</div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Create Account
+            </button>
+            <div class="social-login">
+              <p>Or register with</p>
+              <a href="#">Google</a>
+              <a href="#">Facebook</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script -->
+    <script src="myscript.js"></script>
+  </body>
+</html>
